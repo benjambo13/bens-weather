@@ -1,39 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ben's Weather
+This project was created to increase my coding skills in 3 new technologies:
 
-## Getting Started
+**1. Next.js v13**
+**2. TypeScript**
+**3. Tailwind CSS**
 
-First, run the development server:
+It is a simple weather web application which uses the `https://www.weatherapi.com/` API's to get the forecast, current and historical weather.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Landing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is landing screen. Where a user can enter any location they like. And then press 'Go'
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/1c3a730a-19f2-4e65-8dae-ed4f1616dcc7">
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Dashboard
+This is the weather reporting page, where a user can:
+1. See the current weather at the top left
+2. Scroll along the bottom to see todays forecast
+3. Click the top button on the right hand side to show todays stats
+4. Click the second button on the right hand side to open the History sheet
+5. 
+<img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/58a7e313-c61c-4340-8f6b-f73b7cb9a661">
+<img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/7c57af93-6a5a-444c-8228-c1772db077e2">
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## History
+The history sheet can be used to get the previous week's weather history, using the calender to navigate the days:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# bens-weather
+<img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/67e99f2c-4062-49fa-a1a0-500de125de78">
