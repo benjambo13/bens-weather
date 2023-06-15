@@ -2,7 +2,9 @@
 This project was created to increase my coding skills in 3 new technologies:
 
 **1. Next.js v13**
+
 **2. TypeScript**
+
 **3. Tailwind CSS**
 
 It is a simple weather web application which uses the `https://www.weatherapi.com/` API's to get the forecast, current and historical weather.
