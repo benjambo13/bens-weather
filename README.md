@@ -19,7 +19,6 @@ This is the weather reporting page, where a user can:
 2. Scroll along the bottom to see todays forecast
 3. Click the top button on the right hand side to show todays stats
 4. Click the second button on the right hand side to open the History sheet
-5. 
 <img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/58a7e313-c61c-4340-8f6b-f73b7cb9a661">
 <img width="1920" alt="image" src="https://github.com/benjambo13/bens-weather/assets/47751764/7c57af93-6a5a-444c-8228-c1772db077e2">
 
