@@ -2,19 +2,19 @@ import CurrentTile from "./currentTile"
 import ForecastTile from "./forecastTile"
 import ExtraSection from "./extraSection"
 
-interface WeatherObj {
+type WeatherObj = {
   forecast: {
-    forecastday: Array<{
-      hour: HourObj
+    forecastday: {
+      hour: HourObj[]
       astro: AstroObj
-    }>
+    }[]
   },
   current: CurrentObj
   location: LocationObj
   astro: AstroObj
 }
 
-interface CurrentObj {
+type CurrentObj = {
   temp_c: number
   condition: ConditionObj
   is_day: boolean
@@ -24,45 +24,44 @@ interface CurrentObj {
   gust_mph: number
 }
 
-interface ConditionObj {
+type ConditionObj = {
   text: string
 }
 
-interface HourObj {
+type HourObj = {
   condition: ConditionObj
   is_day: boolean
   temp_c: number
   chance_of_rain: number
 }
 
-interface LocationObj {
+type LocationObj = {
   name: string
   country: string
   localtime: string
 }
 
-interface AstroObj {
+type AstroObj = {
   sunrise: string
   sunset: string
 }
 
-async function getData(location: string | undefined) {
-  const res: Response = await fetch(`http://api.weatherapi.com/v1/forecast.json?q=${location}&units=metric&key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
+async function getData(location: string | undefined): Promise<WeatherObj> {
+  const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?q=${location}&units=metric&key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
 
   if (!res.ok) { throw new Error('Failed to fetch data')}
  
   return res.json()
 }
 
-export default async function Page({ params } : { params: any }) {
-  const data: WeatherObj = await getData(params.location)
+export default async function Page({ params } : { params: any }): Promise<JSX.Element> {
+  const data = await getData(params.location)
   const current = data.current
 
   return (
     <div className='bg-clouds h-screen pt-20 bg-cover'>
       <CurrentTile weather={current} location={data.location} />
       <ExtraSection stats={current} location={data.location.name} astro={data.forecast.forecastday[0].astro}/>
-      {/* @ts-ignore */}
       <ForecastTile forecast={data.forecast.forecastday[0].hour} />
     </div>
   )

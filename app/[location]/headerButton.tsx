@@ -3,8 +3,8 @@ import { Suspense, useState } from "react"
 // @ts-ignore
 import { Dashboard, RecentlyViewed } from '@carbon/icons-react'
 
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Button } from "../../components/ui/button"
+import { Calendar } from "../../components/ui/calendar"
 import {
   Sheet,
   SheetContent,
@@ -12,12 +12,12 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { Skeleton } from "@/components/ui/skeleton"
+} from "../../components/ui/sheet"
+import { Skeleton } from "../../components/ui/skeleton"
 
 import HistoryStats from "./historyStats"
 
-export default function HeaderButton({ toggleStats, isShowing, location }: { toggleStats: () => void, isShowing: boolean, location: string}) {
+export default function HeaderButton({ toggleStats, isShowing, location }: { toggleStats: () => void, isShowing: boolean, location: string}): JSX.Element {
   const yesterdayDate = new Date()
   yesterdayDate.setDate(yesterdayDate.getDate() - 1)
   const weekAgoDate = new Date()

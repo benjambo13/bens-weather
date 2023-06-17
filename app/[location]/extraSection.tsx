@@ -4,12 +4,12 @@ import { useState } from "react"
 import HeaderButton from "./headerButton"
 import StatsTile from "./statsTile"
 
-interface AstroObj {
+type AstroObj = {
   sunrise: string
   sunset: string
 }
 
-interface WeatherObj {
+type WeatherObj = {
   temp_c: number
   condition: ConditionObj
   is_day: boolean
@@ -19,14 +19,14 @@ interface WeatherObj {
   gust_mph: number
 }
 
-interface ConditionObj {
+type ConditionObj = {
   text: string
 }
 
-export default function ExtraSection({ stats, location, astro }: { stats: WeatherObj, location: string, astro: AstroObj}) {
+export default function ExtraSection({ stats, location, astro }: { stats: WeatherObj, location: string, astro: AstroObj}): JSX.Element {
   const [ isStatShowing, setIsStatShowing ] = useState(false)
 
-  const toggleStats = () => {
+  const toggleStats = (): void => {
     setIsStatShowing(!isStatShowing)
   }
 

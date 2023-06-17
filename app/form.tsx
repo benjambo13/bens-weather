@@ -2,15 +2,15 @@
 
 import { useRouter } from 'next/navigation'
 
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { useState } from 'react'
+import { Input } from "../components/ui/input"
+import { Button } from "../components/ui/button"
+import { ChangeEvent, useState } from 'react'
 
-export default function Form() {
+export default function Form(): JSX.Element {
   const [location, setLocation] = useState('')
   const router = useRouter()
 
-  const onSubmit = () => {
+  const onSubmit = (): void => {
     router.push(`/${location}`)
   }
 
@@ -21,7 +21,7 @@ export default function Form() {
         name='location'
         type='text'
         placeholder="City, Town or Postcode"
-        onChange={evt => setLocation(evt.target.value)}
+        onChange={(evt: ChangeEvent<HTMLInputElement>) => setLocation(evt.target.value)}
         className='border-black'
       />
       <Button className='w-40' onClick={onSubmit}>Go</Button>

@@ -1,6 +1,6 @@
 import Form from "./form";
 
-export default function Page() {
+export default function Page(): JSX.Element {
   return (
     <>
       <div className="h-screen flex items-center bg-landing-clouds h-screen pt-20 bg-cover">

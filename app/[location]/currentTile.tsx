@@ -3,23 +3,23 @@ import moment from 'moment'
 
 import { getWeatherIconPath } from '../../lib/utils'
 
-interface WeatherObj {
+type WeatherObj = {
   temp_c: number
   condition: ConditionObj
   is_day: boolean
 }
 
-interface ConditionObj {
+type ConditionObj = {
   text: string
 }
 
-interface LocationObj {
+type LocationObj = {
   name: string
   country: string
   localtime: string
 }
 
-export default function CurrentTile({ weather, location }: { weather: WeatherObj, location: LocationObj }) {
+export default function CurrentTile({ weather, location }: { weather: WeatherObj, location: LocationObj }): JSX.Element{
   return(
     <div>
       <div className='flex items-end mx-20' >

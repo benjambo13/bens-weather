@@ -1,7 +1,27 @@
 import moment from 'moment'
 import { getWeatherIconPath } from '../../lib/utils'
 
-async function getData(location: string | undefined, date: Date | undefined) {
+type HistoryObj = {
+  forecast: {
+    forecastday: {
+      day: {
+        condition: {
+          text: string
+        }
+        maxtemp_c: number
+        mintemp_c: number
+        avgtemp_c: number
+        totalprecip_mm: number
+      }
+      astro: {
+        sunrise: number
+        sunset: number
+      }
+    }[]
+  }
+}
+
+async function getData(location: string, date: Date): Promise<HistoryObj> {
   const res: Response = await fetch(`http://api.weatherapi.com/v1/history.json?q=${location}&dt=${moment(date).format('yyyy-MM-DD')}&key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
 
   if (!res.ok) {
@@ -11,7 +31,7 @@ async function getData(location: string | undefined, date: Date | undefined) {
   return res.json()
 }
 
-export default async function HistoryStats({ date }: { date: Date | undefined }) {
+export default async function HistoryStats({ date }: { date: Date }): Promise<JSX.Element> {
   const data = await getData('London', date)
   const day = data.forecast.forecastday[0].day
   const astro = data.forecast.forecastday[0].astro

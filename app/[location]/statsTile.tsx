@@ -1,4 +1,4 @@
-interface WeatherObj {
+type WeatherObj = {
   temp_c: number
   condition: ConditionObj
   is_day: boolean
@@ -8,16 +8,16 @@ interface WeatherObj {
   gust_mph: number
 }
 
-interface ConditionObj {
+type ConditionObj = {
   text: string
 }
 
-interface AstroObj {
+type AstroObj = {
   sunrise: string
   sunset: string
 }
 
-export default function StatsTile({ stats, astro }: { stats: WeatherObj, astro: AstroObj }) {
+export default function StatsTile({ stats, astro }: { stats: WeatherObj, astro: AstroObj }): JSX.Element {
   return (
     <div className='flex fixed top-16 right-40'>
       <div className='flex flex-col mr-8'>

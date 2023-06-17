@@ -1,4 +1,4 @@
-export const day: object = {
+export const day = {
   'Sunny': './weather-icons/clear-day.svg' ,
   'Partly cloudy': './weather-icons/partly-cloudy-day.svg',
   'Cloudy': './weather-icons/cloudy.svg',

@@ -1,6 +1,6 @@
-import { getWeatherIconPath, minTwoNumbers } from "@/lib/utils"
+import { getWeatherIconPath, minTwoNumbers } from "../../lib/utils"
 
-interface HourObj {
+type HourObj = {
   condition: {
     text: string
   }
@@ -9,10 +9,10 @@ interface HourObj {
   chance_of_rain: number
 }
 
-export default function ForecastTile({ forecast }: { forecast: Array<HourObj> }) {
+export default function ForecastTile({ forecast }: { forecast: Array<HourObj> }): JSX.Element {
   return(
     <div className='overflow-auto m-4 block w-fit whitespace-nowrap mx-8 fixed bottom-0'>
-      {forecast.map((hour , i) => {
+      {forecast.map((hour , i): JSX.Element => {
         return(
           <div className='text-center inline-block border-r first:border-l p-1 pb-4 border-black'>
             <div className='flex justify-center'>
